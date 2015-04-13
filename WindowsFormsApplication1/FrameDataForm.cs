@@ -74,7 +74,7 @@ namespace WindowsFormsApplication1
             this.displayImageCount.Text = frame.Images.Count.ToString();
 
 
-            this.aux.Text = "Frame id2: " + frame.Id
+            this.aux.Text = "Frame id3: " + frame.Id
                      + ", timestamp: " + frame.Timestamp
                      + ", hands: " + frame.Hands.Count
                      + ", fingers: " + frame.Fingers.Count
