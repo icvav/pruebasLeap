@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.prueba = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -181,11 +182,21 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Aux:";
             // 
+            // prueba
+            // 
+            this.prueba.AutoSize = true;
+            this.prueba.Location = new System.Drawing.Point(292, 90);
+            this.prueba.Name = "prueba";
+            this.prueba.Size = new System.Drawing.Size(35, 13);
+            this.prueba.TabIndex = 16;
+            this.prueba.Text = "label8";
+            // 
             // FrameDataForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(874, 550);
+            this.Controls.Add(this.prueba);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -227,6 +238,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label prueba;
     }
 }
 
