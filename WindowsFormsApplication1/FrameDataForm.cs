@@ -73,7 +73,7 @@ namespace WindowsFormsApplication1
             this.displayGestureCount.Text = frame.Gestures().Count.ToString();
             this.displayImageCount.Text = frame.Images.Count.ToString();
 
-            //hola2
+            //hola25
 
             this.aux.Text = "Frame id4: " + frame.Id
                      + ", timestamp: " + frame.Timestamp
