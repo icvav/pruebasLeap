@@ -92,7 +92,7 @@ namespace WindowsFormsApplication1
         //        if (disposing)
         //        {
         //            if (components != null)
-        //            {
+        //            { //jnj
         //                components.Dispose();
         //            }
         //            this.controller.RemoveListener(this.listener);
