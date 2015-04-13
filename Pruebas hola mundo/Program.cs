@@ -18,7 +18,7 @@ namespace Pruebas_hola_mundo
             controller.AddListener(listener);
 
             // Keep this process running until Enter is pressed
-            Console.WriteLine("Press Enter to quit...");
+            Console.WriteLine("Press Enter to quit....");
             Console.ReadLine();
 
             controller.RemoveListener(listener);
