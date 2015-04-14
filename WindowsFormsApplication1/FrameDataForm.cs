@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1
 
         void newFrameHandler(Frame frame)
         {
-            //******************************************************************************************************
+            //*************************************************************esti*****************************************
             //      REALMENTE ESTE ES EL ÚNICO MÉTODO QUE IMPORTA. 
             //      TODO LO QUE SEA "LEER" DATOS DEL LEAP MOTION VA AQUÍ
             //      Se ejecuta una vez por fotograma y en "frame" están todos los datos que tiene dicho fotograma
