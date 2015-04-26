@@ -95,7 +95,7 @@ namespace WindowsFormsApplication1
 
             int anguloEntero = Convert.ToInt32(angulo * 100);
 
-            this.aux.Text = angulo.ToString();
+         
 
             // SafeWriteLine("angulo entero: " + anguloEntero);
 
@@ -169,68 +169,53 @@ namespace WindowsFormsApplication1
 
                 if (mano1Dedo1.IsValid)
                 {
+                    this.aux.Text = calcularAngulo(mano1Dedo1ProximalDireccion, mano1Dedo1IntermedioDireccion).ToString();
 
-                    int d1AngMetProx = calcularAngulo(mano1Dedo1MetacarpoDireccion, mano1Dedo1ProximalDireccion);
+                    double d1AngMetProx = calcularAngulo(mano1Dedo1Proximal, mano1Dedo1Intermedio, mano1.IsRight);
                     this.d1AngMetProx.Text = d1AngMetProx.ToString();
-                    int d1AngProxInt = calcularAngulo(mano1Dedo1ProximalDireccion, mano1Dedo1IntermedioDireccion);
-                    this.d1AngProxInt.Text = d1AngProxInt.ToString();
-                    int d1AngIntDist = calcularAngulo(mano1Dedo1IntermedioDireccion, mano1Dedo1DistalDireccion);
-                    this.d1AngIntDist.Text = d1AngIntDist.ToString();
+                    int d1AngProxDist = calcularAngulo(mano1Dedo1IntermedioDireccion, mano1Dedo1DistalDireccion);
+                    this.d1AngIntDist.Text = d1AngProxDist.ToString();
 
                     this.dedo1Tipo.Text = obtenerTipoDedo(mano1Dedo1);
 
                     if (capturarMaximos)
                     {
-                        if (Int32.Parse(this.d1AngMetProxMax.Text) < d1AngMetProx)
+                        if (Int32.Parse(this.d1AngMetProsMax.Text) < d1AngMetProx)
                         {
-                            this.d1AngMetProxMax.Text = d1AngMetProx.ToString();
+                            this.d1AngMetProsMax.Text = d1AngMetProx.ToString();
                         }
-                        if (Int32.Parse(this.d1AngProxIntMax.Text) < d1AngProxInt)
+                        if (Int32.Parse(this.d1AngIntDistMax.Text) < d1AngProxDist)
                         {
-                            this.d1AngProxIntMax.Text = d1AngProxInt.ToString();
-                        }
-                        if (Int32.Parse(this.d1AngIntDistMax.Text) < d1AngIntDist)
-                        {
-                            this.d1AngIntDistMax.Text = d1AngIntDist.ToString();
+                            this.d1AngIntDistMax.Text = d1AngProxDist.ToString();
                         }
 
-
+                        if (Int32.Parse(this.d1AngMetProxMin.Text) > d1AngMetProx)
+                        {
+                            this.d1AngMetProxMin.Text = d1AngMetProx.ToString();
+                        }
                     }
                 }
 
-                //if (mano1Dedo4.IsValid)
-                //{
-                //    int d4AngMetProx = calcularAngulo(mano1Dedo1MetacarpoDireccion, mano1Dedo1ProximalDireccion);
-                //    this.d4AngMetProx.Text = d4AngMetProx.ToString();
-                //    int d4AngProxInt = calcularAngulo(mano1Dedo1ProximalDireccion, mano1Dedo1IntermedioDireccion);
-                //    this.d1AngProxInt.Text = d4AngProxInt.ToString();
-                //    int d4AngIntDist = calcularAngulo(mano1Dedo1IntermedioDireccion, mano1Dedo1DistalDireccion);
-                //    this.d1AngIntDist.Text = d4AngIntDist.ToString();
-
-
-                //}
 
                 if (mano1Dedo2.IsValid)
                 {
                     //int d2AngMetProx = calcularAngulo(mano1Dedo2MetacarpoDireccion, mano1Dedo2ProximalDireccion);
-                    //double d2AngMetProx = calcularAngulo(mano1Dedo2Metacarpo, mano1Dedo2Proximal, false);
-                    //this.d2AngMetProx.Text = d2AngMetProx.ToString();
+                    double d2AngMetProx = calcularAngulo(mano1Dedo2Metacarpo, mano1Dedo2Proximal, mano1.IsRight);
+                    this.d2AngMetProx.Text = d2AngMetProx.ToString();
                     int d2AngProxInt = calcularAngulo(mano1Dedo2ProximalDireccion, mano1Dedo2IntermedioDireccion);
                     this.d2AngProxInt.Text = d2AngProxInt.ToString();
                     int d2AngIntDist = calcularAngulo(mano1Dedo2IntermedioDireccion, mano1Dedo2DistalDireccion);
                     this.d2AngIntDist.Text = d2AngIntDist.ToString();
 
-                    this.aux.Text = (mano1Dedo2MetacarpoDireccion.AngleTo(mano1Dedo2ProximalDireccion) * (180 / Math.PI)).ToString();
-
-
+                    
                     this.dedo2Tipo.Text = obtenerTipoDedo(mano1Dedo2);
 
                     if (capturarMaximos)
                     {
-                        //if (Int32.Parse(this.d2AngMetProxMax.Text) < d2AngMetProx)
-                        //{
-                        //    this.d2AngMetProxMax.Text = d2AngMetProx.ToString();
-                        //}
+                        if (Int32.Parse(this.d2AngMetProxMax.Text) < d2AngMetProx)
+                        {
+                            this.d2AngMetProxMax.Text = d2AngMetProx.ToString();
+                        }
                         if (Int32.Parse(this.d2AngProxIntMax.Text) < d2AngProxInt)
                         {
                             this.d2AngProxIntMax.Text = d2AngProxInt.ToString();
@@ -239,11 +224,18 @@ namespace WindowsFormsApplication1
                         {
                             this.d2AngIntDistMax.Text = d2AngIntDist.ToString();
                         }
+
+                        if (Int32.Parse(this.d2AngMetProxMin.Text) > d2AngMetProx)
+                        {
+                            this.d2AngMetProxMin.Text = d2AngMetProx.ToString();
+                        }
                     }
                 }
                 if (mano1Dedo3.IsValid)
                 {
-                    int d3AngMetProx = calcularAngulo(mano1Dedo3MetacarpoDireccion, mano1Dedo3ProximalDireccion);
+                    //int d3AngMetProx = calcularAngulo(mano1Dedo3MetacarpoDireccion, mano1Dedo3ProximalDireccion);
+                    double d3AngMetProx = calcularAngulo(mano1Dedo3Metacarpo, mano1Dedo3Proximal, mano1.IsRight);
+                    //this.aux.Text = calcularAngulo(mano1Dedo3MetacarpoDireccion, mano1Dedo3ProximalDireccion).ToString();
                     this.d3AngMetProx.Text = d3AngMetProx.ToString();
                     int d3AngProxInt = calcularAngulo(mano1Dedo3ProximalDireccion, mano1Dedo3IntermedioDireccion);
                     this.d3AngProxInt.Text = d3AngProxInt.ToString();
@@ -266,11 +258,17 @@ namespace WindowsFormsApplication1
                         {
                             this.d3AngIntDistMax.Text = d3AngIntDist.ToString();
                         }
+
+                        if (Int32.Parse(this.d3AngMetProxMin.Text) > d3AngMetProx)
+                        {
+                            this.d3AngMetProxMin.Text = d3AngMetProx.ToString();
+                        }
                     }
                 }
                 if (mano1Dedo4.IsValid)
                 {
-                    int d4AngMetProx = calcularAngulo(mano1Dedo4MetacarpoDireccion, mano1Dedo4ProximalDireccion);
+                    //int d4AngMetProx = calcularAngulo(mano1Dedo4MetacarpoDireccion, mano1Dedo4ProximalDireccion);
+                    double d4AngMetProx = calcularAngulo(mano1Dedo4Metacarpo, mano1Dedo4Proximal, mano1.IsRight);
                     this.d4AngMetProx.Text = d4AngMetProx.ToString();
                     int d4AngProxInt = calcularAngulo(mano1Dedo4ProximalDireccion, mano1Dedo4IntermedioDireccion);
                     this.d4AngProxInt.Text = d4AngProxInt.ToString();
@@ -293,11 +291,17 @@ namespace WindowsFormsApplication1
                         {
                             this.d4AngIntDistMax.Text = d4AngIntDist.ToString();
                         }
+
+                        if (Int32.Parse(this.d4AngMetProxMin.Text) > d4AngMetProx)
+                        {
+                            this.d4AngMetProxMin.Text = d4AngMetProx.ToString();
+                        }
                     }
                 }
                 if (mano1Dedo5.IsValid)
                 {
-                    int d5AngMetProx = calcularAngulo(mano1Dedo5MetacarpoDireccion, mano1Dedo5ProximalDireccion);
+                    //int d5AngMetProx = calcularAngulo(mano1Dedo5MetacarpoDireccion, mano1Dedo5ProximalDireccion);
+                    double d5AngMetProx = calcularAngulo(mano1Dedo5Metacarpo, mano1Dedo5Proximal, mano1.IsRight);
                     this.d5AngMetProx.Text = d5AngMetProx.ToString();
                     int d5AngProxInt = calcularAngulo(mano1Dedo5ProximalDireccion, mano1Dedo5IntermedioDireccion);
                     this.d5AngProxInt.Text = d5AngProxInt.ToString();
@@ -319,6 +323,11 @@ namespace WindowsFormsApplication1
                         if (Int32.Parse(this.d5AngIntDistMax.Text) < d5AngIntDist)
                         {
                             this.d5AngIntDistMax.Text = d5AngIntDist.ToString();
+                        }
+
+                        if (Int32.Parse(this.d5AngMetProxMin.Text) > d5AngMetProx)
+                        {
+                            this.d5AngMetProxMin.Text = d5AngMetProx.ToString();
                         }
                     }
                 }
@@ -367,7 +376,26 @@ namespace WindowsFormsApplication1
 
                 if (brazo.IsValid)
                 {
-                    int angBrazoMano = calcularAngulo(brazo.Direction, mano1.Direction);
+                    //int angBrazoMano = calcularAngulo(brazo.Direction, mano1.Direction);
+
+
+                    Vector direction1 = brazo.Basis.zBasis;
+                    Vector direction2 = mano1.Basis.zBasis;
+                    //float rawangle = metacarpalDirection.angleTo(distalPhalangeDirection) * 180 / PI;
+                    double anguloBM = direction1.AngleTo(direction2) * 180 / Math.PI;
+
+                    Vector crossBones = direction1.Cross(direction2);
+                    Vector boneXBasis = brazo.Basis.xBasis;
+                    if (mano1.IsRight) boneXBasis = boneXBasis * (-1);
+                    double sign = (crossBones.Dot(boneXBasis) >= 0) ? 1 : -1;
+                    double sign2 = sign * anguloBM;
+
+                    double angBrazoMano = Math.Round(sign2, 0);
+
+
+
+
+
                     this.angMuneca.Text = angBrazoMano.ToString();
 
                     if (capturarMaximos)
@@ -375,6 +403,11 @@ namespace WindowsFormsApplication1
                         if (Int32.Parse(this.angMunecaMax.Text) < angBrazoMano)
                         {
                             this.angMunecaMax.Text = angBrazoMano.ToString();
+                        }
+
+                        if (Int32.Parse(this.angMunecaMin.Text) > angBrazoMano)
+                        {
+                            this.angMunecaMin.Text = angBrazoMano.ToString();
                         }
                     }
                 }
@@ -384,7 +417,6 @@ namespace WindowsFormsApplication1
                 this.mano.Text = "Mano no válida";
 
                 this.d1AngMetProx.Text = "-ND-";
-                this.d1AngProxInt.Text = "-ND-";
                 this.d1AngIntDist.Text = "-ND-";
 
 
@@ -416,21 +448,6 @@ namespace WindowsFormsApplication1
 
 
 
-            //Vector metacarpalDirection = mano1Dedo2.Bone(Bone.BoneType.TYPE_INTERMEDIATE).Basis.zBasis;
-            //Vector distalPhalangeDirection = mano1Dedo2.Bone(Bone.BoneType.TYPE_DISTAL).Basis.zBasis;
-
-            Vector metacarpalDirection = mano1Dedo2.Bone(Bone.BoneType.TYPE_METACARPAL).Basis.zBasis;
-            Vector distalPhalangeDirection = mano1Dedo2.Bone(Bone.BoneType.TYPE_PROXIMAL).Basis.zBasis;
-
-            double rawangle = metacarpalDirection.AngleTo(distalPhalangeDirection) * 180 / Math.PI;
-
-            //Find sign
-            Vector crossBones = metacarpalDirection.Cross(distalPhalangeDirection);
-            Vector boneXBasis = mano1Dedo2.Bone(Bone.BoneType.TYPE_METACARPAL).Basis.xBasis;
-            if (mano1Dedo2.Hand.IsRight) boneXBasis = boneXBasis * (-1); //Left hand uses a left-hand basis
-            double sign = (crossBones.Dot(boneXBasis) >= 0) ? 1 : -1;
-            double sign2 = sign * rawangle;
-            this.aux.Text = sign2.ToString();
 
         }
 
@@ -513,9 +530,8 @@ namespace WindowsFormsApplication1
             if (isRight) boneXBasis = boneXBasis * (-1);
             double sign = (crossBones.Dot(boneXBasis) >= 0) ? 1 : -1;
             double sign2 = sign * angulo;
-            // this.aux.Text = sign2.ToString();
 
-            return sign2;
+            return Math.Round(sign2,0);
 
 
 

@@ -53,7 +53,7 @@
             this.abd1 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.d5AngMetProxMin = new System.Windows.Forms.Label();
             this.d5AngIntDistMax = new System.Windows.Forms.Label();
             this.d5AngMetProx = new System.Windows.Forms.Label();
             this.d5AngProxIntMax = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@
             this.dedo5Tipo = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.d4AngMetProxMin = new System.Windows.Forms.Label();
             this.d4AngIntDistMax = new System.Windows.Forms.Label();
             this.d4AngMetProx = new System.Windows.Forms.Label();
             this.d4AngProxIntMax = new System.Windows.Forms.Label();
@@ -77,7 +77,7 @@
             this.dedo4Tipo = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label29 = new System.Windows.Forms.Label();
+            this.d3AngMetProxMin = new System.Windows.Forms.Label();
             this.d3AngIntDistMax = new System.Windows.Forms.Label();
             this.d3AngMetProx = new System.Windows.Forms.Label();
             this.d3AngProxIntMax = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.dedo3Tipo = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.d2AngMetProxMin = new System.Windows.Forms.Label();
             this.d2AngIntDistMax = new System.Windows.Forms.Label();
             this.dedo2Tipo = new System.Windows.Forms.Label();
             this.d2AngProxIntMax = new System.Windows.Forms.Label();
@@ -106,17 +106,14 @@
             this.angMuneca = new System.Windows.Forms.Label();
             this.angMunecaMax = new System.Windows.Forms.Label();
             this.angMunecaMin = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.d1AngIntDist = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.d1AngMetProx = new System.Windows.Forms.Label();
             this.dedo1Tipo = new System.Windows.Forms.Label();
-            this.d1AngMetProxMax = new System.Windows.Forms.Label();
-            this.d1AngProxIntMax = new System.Windows.Forms.Label();
+            this.d1AngMetProsMax = new System.Windows.Forms.Label();
             this.d1AngIntDistMax = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.d1AngProxInt = new System.Windows.Forms.Label();
+            this.d1AngMetProxMin = new System.Windows.Forms.Label();
+            this.d1AngMetProx = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.mano = new System.Windows.Forms.Label();
@@ -347,7 +344,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.label32);
+            this.groupBox6.Controls.Add(this.d5AngMetProxMin);
             this.groupBox6.Controls.Add(this.d5AngIntDistMax);
             this.groupBox6.Controls.Add(this.d5AngMetProx);
             this.groupBox6.Controls.Add(this.d5AngProxIntMax);
@@ -365,15 +362,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Dedo 5";
             // 
-            // label32
+            // d5AngMetProxMin
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(232, 20);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(13, 13);
-            this.label32.TabIndex = 22;
-            this.label32.Text = "0";
-            this.label32.Click += new System.EventHandler(this.label32_Click);
+            this.d5AngMetProxMin.AutoSize = true;
+            this.d5AngMetProxMin.Location = new System.Drawing.Point(232, 20);
+            this.d5AngMetProxMin.Name = "d5AngMetProxMin";
+            this.d5AngMetProxMin.Size = new System.Drawing.Size(13, 13);
+            this.d5AngMetProxMin.TabIndex = 22;
+            this.d5AngMetProxMin.Text = "0";
+            this.d5AngMetProxMin.Click += new System.EventHandler(this.label32_Click);
             // 
             // d5AngIntDistMax
             // 
@@ -470,7 +467,7 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.label30);
+            this.groupBox5.Controls.Add(this.d4AngMetProxMin);
             this.groupBox5.Controls.Add(this.d4AngIntDistMax);
             this.groupBox5.Controls.Add(this.d4AngMetProx);
             this.groupBox5.Controls.Add(this.d4AngProxIntMax);
@@ -488,14 +485,14 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dedo 4";
             // 
-            // label30
+            // d4AngMetProxMin
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(221, 16);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(13, 13);
-            this.label30.TabIndex = 19;
-            this.label30.Text = "0";
+            this.d4AngMetProxMin.AutoSize = true;
+            this.d4AngMetProxMin.Location = new System.Drawing.Point(221, 16);
+            this.d4AngMetProxMin.Name = "d4AngMetProxMin";
+            this.d4AngMetProxMin.Size = new System.Drawing.Size(13, 13);
+            this.d4AngMetProxMin.TabIndex = 19;
+            this.d4AngMetProxMin.Text = "0";
             // 
             // d4AngIntDistMax
             // 
@@ -589,7 +586,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label29);
+            this.groupBox1.Controls.Add(this.d3AngMetProxMin);
             this.groupBox1.Controls.Add(this.d3AngIntDistMax);
             this.groupBox1.Controls.Add(this.d3AngMetProx);
             this.groupBox1.Controls.Add(this.d3AngProxIntMax);
@@ -607,14 +604,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dedo 3";
             // 
-            // label29
+            // d3AngMetProxMin
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(226, 16);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(13, 13);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "0";
+            this.d3AngMetProxMin.AutoSize = true;
+            this.d3AngMetProxMin.Location = new System.Drawing.Point(226, 16);
+            this.d3AngMetProxMin.Name = "d3AngMetProxMin";
+            this.d3AngMetProxMin.Size = new System.Drawing.Size(13, 13);
+            this.d3AngMetProxMin.TabIndex = 16;
+            this.d3AngMetProxMin.Text = "0";
             // 
             // d3AngIntDistMax
             // 
@@ -706,14 +703,14 @@
             this.label14.TabIndex = 7;
             this.label14.Text = "Ang. Prox/Interm:";
             // 
-            // label27
+            // d2AngMetProxMin
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(226, 16);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(13, 13);
-            this.label27.TabIndex = 13;
-            this.label27.Text = "0";
+            this.d2AngMetProxMin.AutoSize = true;
+            this.d2AngMetProxMin.Location = new System.Drawing.Point(226, 16);
+            this.d2AngMetProxMin.Name = "d2AngMetProxMin";
+            this.d2AngMetProxMin.Size = new System.Drawing.Size(13, 13);
+            this.d2AngMetProxMin.TabIndex = 13;
+            this.d2AngMetProxMin.Text = "0";
             // 
             // d2AngIntDistMax
             // 
@@ -869,23 +866,14 @@
             this.angMunecaMin.TabIndex = 24;
             this.angMunecaMin.Text = "0";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 45);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Ang. Prox/Interm:";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 62);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(95, 13);
+            this.label9.Size = new System.Drawing.Size(87, 13);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Ang. Interm/Distal:";
+            this.label9.Text = "Ang. Prox/Distal:";
             // 
             // d1AngIntDist
             // 
@@ -905,15 +893,6 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Ang. Met/Prox:";
             // 
-            // d1AngMetProx
-            // 
-            this.d1AngMetProx.AutoSize = true;
-            this.d1AngMetProx.Location = new System.Drawing.Point(109, 24);
-            this.d1AngMetProx.Name = "d1AngMetProx";
-            this.d1AngMetProx.Size = new System.Drawing.Size(13, 13);
-            this.d1AngMetProx.TabIndex = 5;
-            this.d1AngMetProx.Text = "0";
-            // 
             // dedo1Tipo
             // 
             this.dedo1Tipo.AutoSize = true;
@@ -923,23 +902,14 @@
             this.dedo1Tipo.TabIndex = 6;
             this.dedo1Tipo.Text = "label11";
             // 
-            // d1AngMetProxMax
+            // d1AngMetProsMax
             // 
-            this.d1AngMetProxMax.AutoSize = true;
-            this.d1AngMetProxMax.Location = new System.Drawing.Point(177, 24);
-            this.d1AngMetProxMax.Name = "d1AngMetProxMax";
-            this.d1AngMetProxMax.Size = new System.Drawing.Size(13, 13);
-            this.d1AngMetProxMax.TabIndex = 7;
-            this.d1AngMetProxMax.Text = "0";
-            // 
-            // d1AngProxIntMax
-            // 
-            this.d1AngProxIntMax.AutoSize = true;
-            this.d1AngProxIntMax.Location = new System.Drawing.Point(177, 44);
-            this.d1AngProxIntMax.Name = "d1AngProxIntMax";
-            this.d1AngProxIntMax.Size = new System.Drawing.Size(13, 13);
-            this.d1AngProxIntMax.TabIndex = 8;
-            this.d1AngProxIntMax.Text = "0";
+            this.d1AngMetProsMax.AutoSize = true;
+            this.d1AngMetProsMax.Location = new System.Drawing.Point(178, 25);
+            this.d1AngMetProsMax.Name = "d1AngMetProsMax";
+            this.d1AngMetProsMax.Size = new System.Drawing.Size(13, 13);
+            this.d1AngMetProsMax.TabIndex = 8;
+            this.d1AngMetProsMax.Text = "0";
             // 
             // d1AngIntDistMax
             // 
@@ -950,37 +920,34 @@
             this.d1AngIntDistMax.TabIndex = 9;
             this.d1AngIntDistMax.Text = "0";
             // 
-            // label26
+            // d1AngMetProxMin
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(223, 34);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(13, 13);
-            this.label26.TabIndex = 10;
-            this.label26.Text = "0";
+            this.d1AngMetProxMin.AutoSize = true;
+            this.d1AngMetProxMin.Location = new System.Drawing.Point(222, 25);
+            this.d1AngMetProxMin.Name = "d1AngMetProxMin";
+            this.d1AngMetProxMin.Size = new System.Drawing.Size(13, 13);
+            this.d1AngMetProxMin.TabIndex = 10;
+            this.d1AngMetProxMin.Text = "0";
             // 
-            // d1AngProxInt
+            // d1AngMetProx
             // 
-            this.d1AngProxInt.AutoSize = true;
-            this.d1AngProxInt.Location = new System.Drawing.Point(109, 44);
-            this.d1AngProxInt.Name = "d1AngProxInt";
-            this.d1AngProxInt.Size = new System.Drawing.Size(41, 13);
-            this.d1AngProxInt.TabIndex = 11;
-            this.d1AngProxInt.Text = "label33";
+            this.d1AngMetProx.AutoSize = true;
+            this.d1AngMetProx.Location = new System.Drawing.Point(107, 25);
+            this.d1AngMetProx.Name = "d1AngMetProx";
+            this.d1AngMetProx.Size = new System.Drawing.Size(13, 13);
+            this.d1AngMetProx.TabIndex = 11;
+            this.d1AngMetProx.Text = "0";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.d1AngProxInt);
+            this.groupBox2.Controls.Add(this.d1AngMetProx);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label26);
+            this.groupBox2.Controls.Add(this.d1AngMetProxMin);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.d1AngIntDist);
             this.groupBox2.Controls.Add(this.d1AngIntDistMax);
-            this.groupBox2.Controls.Add(this.d1AngMetProx);
             this.groupBox2.Controls.Add(this.dedo1Tipo);
-            this.groupBox2.Controls.Add(this.d1AngProxIntMax);
-            this.groupBox2.Controls.Add(this.d1AngMetProxMax);
+            this.groupBox2.Controls.Add(this.d1AngMetProsMax);
             this.groupBox2.Location = new System.Drawing.Point(15, 146);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(422, 78);
@@ -990,7 +957,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label27);
+            this.groupBox3.Controls.Add(this.d2AngMetProxMin);
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.label16);
             this.groupBox3.Controls.Add(this.d2AngIntDistMax);
@@ -1153,22 +1120,19 @@
         private System.Windows.Forms.Label abd1Max;
         private System.Windows.Forms.Label abd1;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label d5AngMetProxMin;
+        private System.Windows.Forms.Label d4AngMetProxMin;
+        private System.Windows.Forms.Label d3AngMetProxMin;
+        private System.Windows.Forms.Label d2AngMetProxMin;
         private System.Windows.Forms.Label angMunecaMin;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label d1AngIntDist;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label d1AngMetProx;
         private System.Windows.Forms.Label dedo1Tipo;
-        private System.Windows.Forms.Label d1AngMetProxMax;
-        private System.Windows.Forms.Label d1AngProxIntMax;
+        private System.Windows.Forms.Label d1AngMetProsMax;
         private System.Windows.Forms.Label d1AngIntDistMax;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label d1AngProxInt;
+        private System.Windows.Forms.Label d1AngMetProxMin;
+        private System.Windows.Forms.Label d1AngMetProx;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label mano;
