@@ -18,6 +18,7 @@ namespace WindowsFormsApplication1
         private Controller controller;
         private LeapEventListener listener;
         private bool capturarMaximos = false;
+        private float confianzaMinima = 0;
 
         public FrameDataForm()
         {
@@ -35,7 +36,6 @@ namespace WindowsFormsApplication1
                 switch (EventName)
                 {
                     case "onInit":
-                        //Debug.WriteLine("Init");
                         break;
                     case "onConnect":
                         this.connectHandler();
@@ -55,33 +55,21 @@ namespace WindowsFormsApplication1
         void connectHandler()
         {
             this.controller.EnableGesture(Gesture.GestureType.TYPE_CIRCLE);
-            this.controller.Config.SetFloat("Gesture.Circle.MinRadius", 40.0f);
+            //this.controller.Config.SetFloat("Gesture.Circle.MinRadius", 40.0f);
             this.controller.EnableGesture(Gesture.GestureType.TYPE_SWIPE);
+            this.controller.EnableGesture(Gesture.GestureType.TYPE_KEY_TAP);
+            this.controller.EnableGesture(Gesture.GestureType.TYPE_SCREEN_TAP);
         }
 
         void newFrameHandler(Frame frame)
         {
-            //*************************************************************esti*****************************************
+            //******************************************************************************************************
             //      REALMENTE ESTE ES EL ÚNICO MÉTODO QUE IMPORTA. 
             //      TODO LO QUE SEA "LEER" DATOS DEL LEAP MOTION VA AQUÍ
             //      Se ejecuta una vez por fotograma y en "frame" están todos los datos que tiene dicho fotograma
             //******************************************************************************************************
 
-            this.displayID.Text = frame.Id.ToString();
-            this.displayTimestamp.Text = frame.Timestamp.ToString();
-            this.displayFPS.Text = frame.CurrentFramesPerSecond.ToString();
-            this.displayIsValid.Text = frame.IsValid.ToString();
-            this.displayGestureCount.Text = frame.Gestures().Count.ToString();
-            this.displayImageCount.Text = frame.Images.Count.ToString();
 
-            //hola25
-
-            //this.aux.Text = "Frame id4: " + frame.Id
-            //         + ", timestamp: " + frame.Timestamp
-            //         + ", hands: " + frame.Hands.Count
-            //         + ", fingers: " + frame.Fingers.Count
-            //         + ", tools: " + frame.Tools.Count
-            //         + ", gestures: " + frame.Gestures().Count;
 
 
             Vector vectorHueso1 = frame.Hands[0].Fingers[1].Bone(Bone.BoneType.TYPE_PROXIMAL).Direction;
@@ -95,7 +83,7 @@ namespace WindowsFormsApplication1
 
             int anguloEntero = Convert.ToInt32(angulo * 100);
 
-         
+
 
             // SafeWriteLine("angulo entero: " + anguloEntero);
 
@@ -169,7 +157,7 @@ namespace WindowsFormsApplication1
 
                 if (mano1Dedo1.IsValid)
                 {
-                    this.aux.Text = calcularAngulo(mano1Dedo1ProximalDireccion, mano1Dedo1IntermedioDireccion).ToString();
+                    //this.aux.Text = calcularAngulo(mano1Dedo1ProximalDireccion, mano1Dedo1IntermedioDireccion).ToString();
 
                     double d1AngMetProx = calcularAngulo(mano1Dedo1Proximal, mano1Dedo1Intermedio, mano1.IsRight);
                     this.d1AngMetProx.Text = d1AngMetProx.ToString();
@@ -178,7 +166,7 @@ namespace WindowsFormsApplication1
 
                     this.dedo1Tipo.Text = obtenerTipoDedo(mano1Dedo1);
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.d1AngMetProsMax.Text) < d1AngMetProx)
                         {
@@ -207,10 +195,10 @@ namespace WindowsFormsApplication1
                     int d2AngIntDist = calcularAngulo(mano1Dedo2IntermedioDireccion, mano1Dedo2DistalDireccion);
                     this.d2AngIntDist.Text = d2AngIntDist.ToString();
 
-                    
+
                     this.dedo2Tipo.Text = obtenerTipoDedo(mano1Dedo2);
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.d2AngMetProxMax.Text) < d2AngMetProx)
                         {
@@ -244,7 +232,7 @@ namespace WindowsFormsApplication1
 
                     this.dedo3Tipo.Text = obtenerTipoDedo(mano1Dedo3);
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.d3AngMetProxMax.Text) < d3AngMetProx)
                         {
@@ -277,7 +265,7 @@ namespace WindowsFormsApplication1
 
                     this.dedo4Tipo.Text = obtenerTipoDedo(mano1Dedo4);
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.d4AngMetProxMax.Text) < d4AngMetProx)
                         {
@@ -310,7 +298,7 @@ namespace WindowsFormsApplication1
 
                     this.dedo5Tipo.Text = obtenerTipoDedo(mano1Dedo5);
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.d5AngMetProxMax.Text) < d5AngMetProx)
                         {
@@ -337,7 +325,7 @@ namespace WindowsFormsApplication1
                     int abd1 = calcularAngulo(mano1Dedo2MetacarpoDireccion, mano1Dedo1ProximalDireccion);
                     this.abd1.Text = abd1.ToString();
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.abd1Max.Text) < abd1)
                         {
@@ -351,7 +339,7 @@ namespace WindowsFormsApplication1
                     int abd2 = calcularAngulo(mano1Dedo3ProximalDireccion, mano1Dedo2ProximalDireccion);
                     this.abd2.Text = abd2.ToString();
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.abd2Max.Text) < abd2)
                         {
@@ -365,7 +353,7 @@ namespace WindowsFormsApplication1
                     int abd3 = calcularAngulo(mano1Dedo3ProximalDireccion, mano1Dedo4ProximalDireccion);
                     this.abd3.Text = abd3.ToString();
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.abd3Max.Text) < abd3)
                         {
@@ -392,13 +380,9 @@ namespace WindowsFormsApplication1
 
                     double angBrazoMano = Math.Round(sign2, 0);
 
-
-
-
-
                     this.angMuneca.Text = angBrazoMano.ToString();
 
-                    if (capturarMaximos)
+                    if (capturarMaximos && mano1.Confidence >= confianzaMinima)
                     {
                         if (Int32.Parse(this.angMunecaMax.Text) < angBrazoMano)
                         {
@@ -410,6 +394,57 @@ namespace WindowsFormsApplication1
                             this.angMunecaMin.Text = angBrazoMano.ToString();
                         }
                     }
+                }
+
+                this.fuerzaPellizco.Text = mano1.PinchStrength.ToString();
+                this.radioEsfera.Text = mano1.SphereRadius.ToString();
+
+                if (frame.Gestures().Count > 0)
+                {
+                    for (int g = 0; g < frame.Gestures().Count; g++)
+                    {
+                        this.aux.Text = frame.Gestures()[g].ToString();
+
+                        Gesture gesto = frame.Gestures()[g];
+
+                        if (gesto.IsValid)
+                        {
+                            switch (gesto.Type)
+                            {
+                                case Gesture.GestureType.TYPE_CIRCLE:
+                                    CircleGesture gestoCirculo = new CircleGesture(gesto);
+
+                                    this.duracionGestoCirculo.Text = Math.Round(gesto.DurationSeconds, 2).ToString();
+
+                                    this.radioCirculo.Text = Math.Round(gestoCirculo.Radius, 2).ToString();
+
+                                    if (gestoCirculo.Pointable.Direction.AngleTo(gestoCirculo.Normal) <= Math.PI / 2)
+                                    {
+                                        this.sentidoGestoCirculo.Text = "horario";
+                                    }
+                                    else
+                                    {
+                                        this.sentidoGestoCirculo.Text = "antihorario";
+                                    }
+
+                                    this.nVueltas.Text = gestoCirculo.Progress.ToString();
+
+                                    break;
+                                case Gesture.GestureType.TYPE_KEY_TAP:
+                                    KeyTapGesture keyTapGesture = new KeyTapGesture(gesto);
+                                    break;
+                                case Gesture.GestureType.TYPE_SCREEN_TAP:
+                                    ScreenTapGesture screenTapGesture = new ScreenTapGesture(gesto);
+                                    break;
+                                case Gesture.GestureType.TYPE_SWIPE:
+                                    SwipeGesture swipeGesture = new SwipeGesture(gesto);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
+                    }
+
                 }
             }
             else
@@ -443,11 +478,6 @@ namespace WindowsFormsApplication1
                 this.angMuneca.Text = "-ND-";
 
             }
-
-
-
-
-
 
         }
 
@@ -531,7 +561,7 @@ namespace WindowsFormsApplication1
             double sign = (crossBones.Dot(boneXBasis) >= 0) ? 1 : -1;
             double sign2 = sign * angulo;
 
-            return Math.Round(sign2,0);
+            return Math.Round(sign2, 0);
 
 
 
@@ -569,20 +599,27 @@ namespace WindowsFormsApplication1
         //    }
         //}
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
-        }
 
         private void start_Click(object sender, EventArgs e)
         {
-            capturarMaximos = true;
-            this.lEstado.Text = "Capturando máximos";
+            if (float.TryParse(this.confianza.Text.Replace('.', ','), out confianzaMinima))
+            {
+                if (confianzaMinima >= 0 && confianzaMinima <= 1)
+                {
+                    capturarMaximos = true;
+                    this.lEstado.Text = "Capturando máximos";
+                }
+                else
+                {
+                    MessageBox.Show("Hay que poner un número entre 0 y 1");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hay que poner un número entre 0 y 1");
+            }
         }
 
         private void stop_Click(object sender, EventArgs e)
@@ -591,27 +628,13 @@ namespace WindowsFormsApplication1
             this.lEstado.Text = "Normal";
         }
 
-        private void d5AngProxIntMax_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void d5AngIntDistMax_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label32_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void d5AngMetProxMax_Click(object sender, EventArgs e)
-        {
 
-        }
     }
-
-
-
 }
