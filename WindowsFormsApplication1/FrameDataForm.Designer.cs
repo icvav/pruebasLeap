@@ -910,9 +910,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(288, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 13);
+            this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 33;
-            this.label3.Text = "Flexión Máxima:";
+            this.label3.Text = "Extensión Máxima:";
             // 
             // label4
             // 
